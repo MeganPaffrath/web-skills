@@ -1,0 +1,98 @@
+:root {
+    --skill-zero: #7e7e7e;
+    --skill-one: #ff4545;
+    --skill-two: #ffa534;
+    --skill-three:#ffe234;
+    --skill-four: #b7dd29;
+    --skill-five: #57e32c;
+}
+
+/* GRID */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: 0;
+}
+
+/* Color not coming in... */
+.box-left {
+    background-color: rgb(241, 241, 241);
+}
+.box-right {
+    background-color: rgb(182, 182, 182);
+}
+
+@media screen and (min-width: 700px) {
+    main {
+        /* height: 100vh; */
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    .box-left {
+        grid-column: 1/2;
+    }
+    .box-right {
+        grid-column: 2/2;
+    }
+}
+
+/* LIST STRUCTURE */
+h1 {
+    text-align: center;
+}
+
+.dev-list, .dev-list ul, .dev-list li {
+    position: relative;
+}
+
+.dev-list ul {
+    list-style: none;
+    padding-left: 32px;
+}
+
+.dev-list li::before, .dev-list li::after {
+    content: "";
+    position: absolute;
+    left: -12px;
+}
+
+.dev-list li::before {
+    border-top: 1px solid black;
+    top: 9px;
+    width: 8px;
+    height: 0;
+}
+
+.dev-list li::after {
+    border-left: 1px solid black;
+    height: 100%;
+    width: 0px;
+    top: 2px;
+}
+
+.dev-list ul > li:last-child::after {
+    height: 8px;
+}
+
+/* UNDERSTANDING RANKS */
+mark {
+    padding: 0 5px;
+}
+mark.zero {
+    background-color: var(--skill-zero);
+}
+mark.one {
+    background-color: var(--skill-one);
+}
+mark.two {
+    background-color: var(--skill-two);
+}
+mark.three {
+    background-color: var(--skill-three);
+}
+mark.four {
+    background-color: var(--skill-four);
+}
+mark.five {
+    background-color: var(--skill-five);
+}
